@@ -73,16 +73,15 @@ class MathUtilityTest extends FunSuite{
     timeit(_print1())(testOut.print)
 
     val t1 = System.nanoTime()
-    val innerTime= (t1-t0)/1000
-    println(s"Base ${(t1-t0)/1000} ms")
+    val innerTime= (t1-t0)/1000000
+    println(s"Base ${(t1-t0)/1000000} ms")
 
-    println(testOut.messages)
     val time_taken = testOut.messages(0).substring(testOut.messages(0).indexOf(": ")+2,testOut.messages(0).size-3)
-    val percent = ((innerTime - time_taken.toLong)* 100)/innerTime
-    assert( (percent < 75 && percent > 0) == true)
+    assert( (time_taken.toLong > 2000 && time_taken.toLong < innerTime) == true)
   }
 
   def _print1() : Unit = {
+    Thread.sleep(2000)
     (0 to 5000).foldLeft(0)(_+_)
   }
 }
