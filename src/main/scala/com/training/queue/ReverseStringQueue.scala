@@ -9,7 +9,7 @@ package com.training.queue
   *
   *
   */
-trait ReverseStringQueue extends ManualGenericQueue[String] {
+trait ReverseStringQueue extends Queue[String] {
 
   /**
     * This method reverses the String before passing to Super class Manual Generic Queue class.
