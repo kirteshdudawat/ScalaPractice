@@ -38,8 +38,8 @@ object MathUtils {
     val t0 = System.nanoTime()
     val result = block
     val t1 = System.nanoTime()
-    print(s"Elapsed time: ${(t1 - t0)/1000} ms")
-    //println(s"Elapsed time: ${(t1 - t0)/1000} ms")
+    print(s"Elapsed time: ${(t1 - t0)/1000000} ms")
+   //println(s"Elapsed time: ${(t1 - t0)/1000} ms")
     result
   }
   // How do you test this - need to make sure the time is correct enough
