@@ -1,4 +1,4 @@
-name := "Training"
+name := "ScalaPractice"
 
 version := "0.1"
 
